@@ -28,6 +28,7 @@ db.categories = require("./categories.model")(sequelize, Sequelize);
 //db relations
 db.users.hasOne(db.blogs, { as: "user" });
 db.blogs.hasMany(db.categories, { as: "blogid" });
+db.categories.hasMany(db.posts, { as: "categoryid" });
 db.categories.belongsToMany(db.posts, { through: "postscategories" });
 db.posts.belongsToMany(db.categories, { through: "postscategories"});
 
@@ -70,7 +71,7 @@ db.posts.belongsToMany(db.categories, { through: "postscategories"});
 //   ]
 // },
 // {
-//   include: [rel2]
+//   include: ...
 // })
 
 module.exports = db;
