@@ -4,10 +4,9 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING
       },
       text: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       }
     });
-
     
     return Post;
   };
